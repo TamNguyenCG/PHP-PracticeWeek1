@@ -8,7 +8,7 @@
 
     <title>Thời gian hiện tại</title>
 <body>
-<h1> Bây giờ là: <?php echo date('Y-M-d h:m:s'); ?> </h1>
+<h1> Bây giờ là: <?php echo date('Y-M-d H:i:s'); ?> </h1>
 <?php date_default_timezone_set("Asia/Ho Chi Minh") ?>
 </body>
 </html>

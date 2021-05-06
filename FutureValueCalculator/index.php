@@ -34,9 +34,13 @@
         $percent = 100;
         if($year == "0"){
             echo "Year(s) must > 0";
+        }elseif($money <= 0){
+            echo "Money must > 0";
+        }elseif($rate < 0){
+            echo "Rate must > 0";
         }else{
             $moneyFuture = $money + ($money*($rate*$year/$percent));
-            echo "Future Value of "."$money"." after "."$year"." year(s)"." = "."$moneyFuture";
+            echo "Future Value of "."$money"." after "."$year"." year(s)"." with "."$rate"."%"." = "."$moneyFuture";
         }
     }
 ?>

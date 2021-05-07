@@ -53,19 +53,19 @@
 
         switch ($select){
             case "Add":
-                echo "$firstNum". ' + ' ."$secondNum".' = '.$firstNum + $secondNum;
+                echo "$firstNum + $secondNum".' = '.$firstNum + $secondNum;
                 break;
             case "Sub":
-                echo "$firstNum". ' - ' ."$secondNum".' = '.$firstNum - $secondNum;
+                echo "$firstNum - $secondNum".' = '.$firstNum - $secondNum;
                 break;
             case "Multi":
-                echo "$firstNum". ' * ' ."$secondNum".' = '.$firstNum * $secondNum;
+                echo "$firstNum * $secondNum".' = '.$firstNum * $secondNum;
                 break;
             case "Div":
                 if($secondNum == 0){
                     echo "Second Number error, Can't division for zero (0)";
                 }else{
-                    echo "$firstNum". ' / ' ."$secondNum".' = '.$firstNum / $secondNum;
+                    echo "$firstNum / $secondNum".' = '.$firstNum / $secondNum;
                     break;
                 }
             }

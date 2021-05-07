@@ -20,4 +20,6 @@ try {
     exceptionCalculator(6, 5);
 } catch (Exception $e) {
     echo "Unable to divine";
-}
+}/*finally {
+    echo "Process is completed";
+}*/

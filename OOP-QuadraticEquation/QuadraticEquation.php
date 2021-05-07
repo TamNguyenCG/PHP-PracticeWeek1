@@ -6,47 +6,42 @@ class quadraticEquation
     public int $b;
     public int $c;
     public int $delta;
-    public int $r1;
-    public int $r2;
 
     public function __construct($a, $b, $c)
     {
         $this->a = $a;
         $this->b = $b;
         $this->c = $c;
+        $this->delta =(pow($this->b,2)) - (4 * $this->a * $this->c);
     }
 
-   /* function getA($a): int
+    public function getA(): int
     {
         return $this->a;
     }
 
-    function getB($b): int
+    public function getB(): int
     {
-        return $this->a;
+        return $this->b;
     }
 
-    function getC($c): int
+    public function getC(): int
     {
-        return $this->a;
-    }*/
-
-    function getDiscriminant(): int
-    {
-        return $this->delta = pow($this->b, 2) - (4 * $this->a * $this->c);
+        return $this->c;
     }
 
-    function getRoot1(): int
+    public function getDiscriminant(): int
     {
-        return $this->r1 = ((-$this->b) + (sqrt($this->delta))) / 2 * $this->a;
+        return $this->delta;
     }
 
-    function getRoot2(): int
+    public function getRoot1(): int
     {
-        return $this->r2 = ((-$this->b) - (sqrt($this->delta))) / 2 * $this->a;
+        return ((-$this->b) + (sqrt($this->delta))) / 2 * $this->a;
     }
-    function display(){
-        echo "ax2 + bx + x = 0 <br>";
-        echo "==>".$this->a . "x2 + " . $this->b . "x + " . $this->c . "= 0 <br>";
+
+    public function getRoot2(): int
+    {
+        return ((-$this->b) - (sqrt($this->delta))) / 2 * $this->a;
     }
 }

@@ -32,7 +32,11 @@
         $year = $_POST["years"];
         $moneyFuture = "";
         $percent = 100;
-        if($year == "0"){
+        for($i = 1;$i <= $year;$i++){
+            $moneyFuture = $money + ($money*($rate*$year/$percent));
+        }
+        echo "Future Value of "."$money"." after "."$year"." year(s)"." with "."$rate"."%"." = "."$moneyFuture";
+        /*if($year == "0"){
             echo "Year(s) must > 0";
         }elseif($money <= 0){
             echo "Money must > 0";
@@ -41,7 +45,7 @@
         }else{
             $moneyFuture = $money + ($money*($rate*$year/$percent));
             echo "Future Value of "."$money"." after "."$year"." year(s)"." with "."$rate"."%"." = "."$moneyFuture";
-        }
+        }*/
     }
 ?>
 </body>

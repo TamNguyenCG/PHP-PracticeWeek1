@@ -25,11 +25,11 @@
             <tr>
                 <td>Operator:</td>
                 <td>
-                    <select>
-                        <option value="+" name="Add">Addition</option>
-                        <option value="-" name="Sub">Subtraction</option>
-                        <option value="*" name="Multi">Multiple</option>
-                        <option value="/" name="Div">Division</option>
+                    <select name="select">
+                        <option value="Add" >Addition</option>
+                        <option value="Sub" >Subtraction</option>
+                        <option value="Multi" >Multiple</option>
+                        <option value="Div">Division</option>
                     </select>
                 </td>
             </tr>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Calculator"></td>
+                <td><input type="submit" name="submit" value="Calculator"></td>
             </tr>
         </table>
     </fieldset>
@@ -49,16 +49,26 @@
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         $firstNum = $_POST["F_operand"];
         $secondNum = $_POST["S_operand"];
-        $add = $_POST["Add"];
-        $sub = $_POST["Sub"];
-        $mul = $_POST["Multi"];
-        $div = $_POST["Div"];
+        $select=$_POST["select"];
 
-        if($div){
-            if($secondNum == 0){
-
+        switch ($select){
+            case "Add":
+                echo "$firstNum". ' + ' ."$secondNum".' = '.$firstNum + $secondNum;
+                break;
+            case "Sub":
+                echo "$firstNum". ' - ' ."$secondNum".' = '.$firstNum - $secondNum;
+                break;
+            case "Multi":
+                echo "$firstNum". ' * ' ."$secondNum".' = '.$firstNum * $secondNum;
+                break;
+            case "Div":
+                if($secondNum == 0){
+                    echo "Second Number error, Can't division for zero (0)";
+                }else{
+                    echo "$firstNum". ' / ' ."$secondNum".' = '.$firstNum / $secondNum;
+                    break;
+                }
             }
-        }
     }
 ?>
 </body>
